@@ -1,4 +1,5 @@
-﻿using Firebase;
+﻿
+using Android.OS;
 using Plugin.FirebasePushNotification;
 
 namespace TalgorAlertApp
@@ -10,27 +11,39 @@ namespace TalgorAlertApp
             InitializeComponent();
 
             MainPage = new AppShell();
-            // Token event
-            CrossFirebasePushNotification.Current.Subscribe("all");
-            CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
-        }
+            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+            {
+                //Change for your default notification channel id here
+                FirebasePushNotificationManager.DefaultNotificationChannelId = "FirebasePushNotificationChannel";
 
-        private void Current_OnTokenRefresh(object source, FirebasePushNotificationTokenEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine($"Token: {e.Token}");
-        }
+                //Change for your default notification channel name here
+                FirebasePushNotificationManager.DefaultNotificationChannelName = "General";
+            }
+            
+               // Token event
+            CrossFirebasePushNotification.Current.RegisterForPushNotifications();
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine($"TOKEN : {p.Token}");
+            };
+            // Push message received event
+            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
+            {
 
-        protected override void OnStart()
-        {
-        }
+                System.Diagnostics.Debug.WriteLine("Received");
 
-        protected override void OnSleep()
-        {
-        }
+            };
+            //Push message received event
+            CrossFirebasePushNotification.Current.OnNotificationOpened += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine("Opened");
+                foreach (var data in p.Data)
+                {
+                    System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
+                }
 
-        protected override void OnResume()
-        {
+            };
+
         }
-    
     }
 }

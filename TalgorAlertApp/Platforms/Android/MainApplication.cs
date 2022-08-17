@@ -33,7 +33,10 @@ namespace TalgorAlertApp
 #else
               FirebasePushNotificationManager.Initialize(this,false);
 #endif
-
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine($"TOKEN : {p.Token}");
+            };
             //Handle notification when app is closed here
             CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
             {
