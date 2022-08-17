@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "713550546562",
+    "project_id": "inappmessagingdemo-dbd96",
+    "storage_bucket": "inappmessagingdemo-dbd96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713550546562:android:f77c2a52b7e4f383e0969b",
+        "android_client_info": {
+          "package_name": "com.CreativeMindze.TalgorTradeApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713550546562-4cn2avcb88p6some49vqq68cr45jafao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0r05nzknQCGF52m5adLQnQ609vf6toqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713550546562-4cn2avcb88p6some49vqq68cr45jafao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
