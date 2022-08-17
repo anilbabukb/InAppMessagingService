@@ -1,4 +1,5 @@
-﻿using Plugin.FirebasePushNotification;
+﻿using Firebase;
+using Plugin.FirebasePushNotification;
 
 namespace TalgorAlertApp
 {

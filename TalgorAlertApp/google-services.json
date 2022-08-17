@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:713550546562:android:f77c2a52b7e4f383e0969b",
+        "mobilesdk_app_id": "1:713550546562:android:5a64f635fb093edae0969b",
         "android_client_info": {
-          "package_name": "com.CreativeMindze.TalgorTradeApp"
+          "package_name": "com.companyname.talgoralertapp"
         }
       },
       "oauth_client": [
