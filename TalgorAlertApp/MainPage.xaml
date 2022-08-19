@@ -2,40 +2,62 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TalgorAlertApp.MainPage">
-
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
+        <Grid  BackgroundColor="White" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <VerticalStackLayout
+            Spacing="15"
+            Padding="10"
             VerticalOptions="Center">
 
-            <Image
+                <Image
                 Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                SemanticProperties.Description="Playtrade"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
+                <Frame  >
+                    <StackLayout Spacing="10" >
+                        <Entry x:Name="IdEntry" Placeholder="User Id" FontAttributes="Bold" FontAutoScalingEnabled="True" FontSize="Body"/>
+                        <Border HeightRequest="1" BackgroundColor="LightGray"/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                        <Entry x:Name="PasswordEntry" Placeholder="Password" FontAttributes="Bold" FontAutoScalingEnabled="True" FontSize="Body" IsPassword="True"/>
+                        <Border HeightRequest="1" BackgroundColor="LightGray"/>
+
+                        <Label VerticalOptions="End" Grid.Row="1"               
+                 x:Name="Errortxt"
+                               TextColor="Red"
+                FontSize="Subtitle" 
                 HorizontalOptions="Center" />
+                        <Button 
+                x:Name="LoginBtn" BackgroundColor="#0379AE"
+                Text="Login" Clicked="LoginBtnClicked"
+                HorizontalOptions="End" IsEnabled="True" TextColor="White">
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="IconFontTypes" Color="White" Size="24"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </StackLayout>
+                </Frame>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
+            </VerticalStackLayout>
+
+
+            <Label VerticalOptions="End" Grid.Row="1"               
+                Text="Token"
+                FontSize="Subtitle" 
                 HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+            <Label VerticalOptions="End" Grid.Row="2"                
+                x:Name="StartTimeLabel"
+                 Margin="0,0,0,10"
+                FontSize="Title" FontAttributes="Bold"
                 HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 
 </ContentPage>

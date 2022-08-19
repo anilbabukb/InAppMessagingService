@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32721.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TalgorAlertApp", "TalgorAlertApp\TalgorAlertApp.csproj", "{AD56E3FA-9A58-4ED6-9BAB-040D2891A095}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FCM", "FCM\FCM.csproj", "{0EBEC9EA-FEA4-46D2-B882-DD324F23878C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalgorNotificationAPI", "..\TalgorNotificationAPI\TalgorNotificationAPI\TalgorNotificationAPI.csproj", "{429E59C3-0813-4238-A2B3-3B2F68AD1038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{AD56E3FA-9A58-4ED6-9BAB-040D2891A095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD56E3FA-9A58-4ED6-9BAB-040D2891A095}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD56E3FA-9A58-4ED6-9BAB-040D2891A095}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0EBEC9EA-FEA4-46D2-B882-DD324F23878C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBEC9EA-FEA4-46D2-B882-DD324F23878C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBEC9EA-FEA4-46D2-B882-DD324F23878C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBEC9EA-FEA4-46D2-B882-DD324F23878C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429E59C3-0813-4238-A2B3-3B2F68AD1038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429E59C3-0813-4238-A2B3-3B2F68AD1038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429E59C3-0813-4238-A2B3-3B2F68AD1038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429E59C3-0813-4238-A2B3-3B2F68AD1038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

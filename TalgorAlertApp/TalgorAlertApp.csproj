@@ -30,6 +30,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -49,6 +53,9 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+	  <PackageReference Include="Xamarin.Firebase.Iid">
+	    <Version>121.1.0.7</Version>
+	  </PackageReference>
 	  <PackageReference Include="Xamarin.Firebase.Messaging">
 	    <Version>122.0.0.7</Version>
 	  </PackageReference>
@@ -62,13 +69,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <GoogleServicesJson Include="google-services.json" />
+	  <GoogleServicesJson Include="google-services.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </GoogleServicesJson>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="FirebaseAdmin" Version="2.3.0" />
 	  <PackageReference Include="Google.Apis.FirebaseCloudMessaging.v1" Version="1.57.0.2622" />
 	  <PackageReference Include="Plugin.FirebasePushNotification" Version="3.4.25" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Helpers\private_key.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
